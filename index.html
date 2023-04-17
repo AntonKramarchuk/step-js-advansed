@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <script src="./js/script.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/04f13ca6e8.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="header__nav">
+        <ul class="header__nav__list">
+          <a href="#" class="header__nav__list__logo"
+            ><img src="./img/doctor-logo.svg" height="50px" alt="#"
+          /></a>
+          <div class="header__nav__list__section">
+            <a
+              href="#"
+              class="header__nav__list__section__item btn header__nav__list__section__item--hidden"
+              onclick="showForm()"
+              >Вход</a
+            >
+            <a
+              href="#"
+              class="header__nav__list__section__item btn"
+              onclick="creatCards()"
+              >Создать визит</a
+            >
+          </div>
+        </ul>
+      </nav>
+      <main class="main">
+        <div class="registration__section">
+          <div class="registration__container">
+            <form action="form">
+              <input type="text" id="search" placeholder="Поиск визита" />
+              <select name="" id="" aria-placeholder="">
+                <option value="Done">Done</option>
+                <option value="Open">Open</option>
+              </select>
+              <select name="" id="" aria-placeholder="">
+                <option value="Done">High</option>
+                <option value="Open">Normal</option>
+                <option value="Open">Low</option>
+              </select>
+              <ul class="main__list"></ul>
+            </form>
+            <form
+              action=""
+              id="form1"
+              class="registration registration--hidden"
+            >
+              Registration
+              <input
+                type="email"
+                placeholder="Email"
+                class="form__email"
+                value="teststep@gmail.com"
+              />
+              <input
+                type="password"
+                placeholder="Пароль"
+                class="form__password"
+                value="123456789"
+              />
+              <button
+                type="submit"
+                form="form1"
+                value="Submit"
+                class="form__btn btn"
+              >
+                Вход
+              </button>
+              <p class="form__not__found form__not__found--hidden">
+                Неверный логин или пароль
+              </p>
+            </form>
+            <h3 class="missing__cards hidden">No items have been added</h3>
+            <div class="visids_container">
+              <!-- <div class="visid">
+          <i class="fa-solid fa-x visid__icon" onclick="deleteVisids()"></i>
+          <form action="" class="visid__value">
+            <input type="text" class="visids_search" value="" class="visid__value__list" />
+            <input type="text" class="visids_value" value="" class="visid__value__list" />
+            <input type="text" class="visids_value" value="" class="visid__value__list" />
+            <input type="text" class="visids_value" value="" class="visid__value__list" />
+            <input type="text" class="visids_value" value="" class="visid__value__list" />
+            <input type="text" class="visids_value" value="" class="visid__value__list" />
+            <input type="text" class="visids_value" value="" class="visid__value__list" />
+            <input type="text" class="visids_value" value="" class="visid__value__list" />
+            <input type="text" class="visids_value" value="" class="visid__value__list" />
+            <input type="text" class="visids_value" value="" class="visid__value__list" />
+            <input type="text" class="visids_value" value="" class="visid__value__list" />
+          </form>
+
+          <button class="visid__more">Показати більше</button> -->
+              <!-- <div class="visid__container__chaing">
+                <button class="visid__edit" onclick="changeCard()">
+                  Редагувати візит
+                </button>
+                <button class="visid__edit" onclick="seveCard()">
+                  Зберегти візит
+                </button>
+              </div>
+            </div> -->
+          </div>
+        </div>
+        <div class="cards__container">
+          <!-- <form class="card_form">
+            <div class="cards__exid" onclick="deleteCads()">X</div>
+            <div class="cards">
+              <select name="doctor" id="doctor">
+                <option value="Dentist">Стоматолог</option>
+                <option value="Cardiologist">Кардіолог</option>
+                <option value="Therapist">Терапевт</option>
+              </select>
+              <input required type="text" name="visit" placeholder="Мета візиту" />
+              <input
+                type="text"
+                name="description"
+                placeholder="Короткий опис візиту"
+              />
+              <select name="prioritet" id="">
+                <option value="">Звичайна</option>
+                <option value="">Пріоритетна</option>
+                <option value="">Невідкладна</option>
+              </select>
+              <input type="text" name="name" placeholder="П.І.Б." />
+              <div class="cards__more">
+                <div class="doctors_delete">
+                  <input
+                    type="text"
+                    name="lastVisit"
+                    placeholder="Дата останнього відвідуванняк"
+                  />
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="submiot_cards">Створити запис</button>
+          </form> -->
+          <!-- <div class="visid__more__container">
+            <input readonly type="text" value="Мета візиту: ${this.visit}" class="visid__value__list" />
+            <input readonly type="text" value="Вік: ${this.age}" class="visid__value__list" />
+            <input readonly type="text" value="Короткий опис: ${this.description}" class="visid__value__list" />
+            <input readonly type="text" value="індекс тіла: ${this.bodyWeight}" class="visid__value__list" />
+            <input readonly type="text" value="Останій візіт: ${this.lastVisit}" class="visid__value__list" />
+            <input readonly type="text" value="Пріоритетність: ${this.prioritet}" class="visid__value__list" />
+            <input readonly type="text" value="Дата: ${this.data}" class="visid__value__list" />
+            <input readonly type="text" value="Вік: ${this.ageCardiol}" class="visid__value__list" />
+            <input readonly type="text" value="Cерцево-судинної: ${this.transferredDiseases}" class="visid__value__list" />
+            <input readonly type="text" value="Тиск: ${this.pressure}" class="visid__value__list" />
+            </div> -->
+        </div>
+      </main>
+    </header>
+  </body>
+</html>
